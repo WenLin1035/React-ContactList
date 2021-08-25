@@ -1,0 +1,33 @@
+.isvalid{
+    color:black;
+}
+
+.isnotvalid{
+    color:red;
+}
+
+.invalidinput {
+    Border-color: red;
+    Background: #ffd7d7;
+    display: inline;
+    Width: 30%;
+    Border: 1px solid #ccc;
+    Font: inherit;
+    Line-height: 1.5rem;
+    Padding: 0 0.24rem;
+}
+
+.input {
+    display: inline;
+    Width: 30%;
+    Border: 1px solid #ccc;
+    Font: inherit;
+    Line-height: 1.5rem;
+    Padding: 0 0.24rem;
+}
+
+.input:focus {
+    Outline: none;
+    Background: yellow;
+    Border-color: #8b005d;
+}

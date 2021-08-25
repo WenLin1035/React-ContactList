@@ -1,0 +1,20 @@
+.card{
+    border: solid black 2px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.cardformat{
+    width: 100%;
+}
+
+.cardleft{
+    text-align:left;
+    padding: 10px;
+}
+
+.cardright{
+    text-align:right;
+    padding: 10px;
+}
