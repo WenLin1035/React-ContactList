@@ -69,7 +69,7 @@ class AddContactDetails extends Component{
     render(){
         return (
             <div>
-               <h1>Add Contact Details </h1>
+               <h2>Add Contact Details </h2>
                <form style={{ textAlign: "center" }}>
                     <label className={!this.state.isValid ? Style.isnotvalid : Style.isvalid}>Id : </label><input type="text" name="id"
                         value={this.state.id}
@@ -87,7 +87,8 @@ class AddContactDetails extends Component{
                      value={this.state.phone}
                         onChange={(event) => { this.setState({ phone: event.target.value }) }}
                         className={!this.state.isValid ? Style.invalidinput : Style.input} /><br />
-                  <button type="button" onClick={this.add}>Submit</button>
+                    <button type="button" onClick={this.add}>Submit</button>
+                    <br /><br /><br />
               </form>
            </div>
        );

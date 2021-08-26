@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import Contact from './Contact';
+import Style from './ContactDetailsList.module.css';
 
 
 class ContactDetails extends Component {
@@ -22,19 +23,21 @@ class ContactDetails extends Component {
         console.log("in render of ContactDetails");
         //console.log(this.props.clist);
         const contactlist = (
-            <ul style={{listStyleType:"none"} }>
+            <ul style={{ listStyleType: "none" }}>
                 {
                     this.props.clist.map((contact) => {
                         return <Contact key={contact.id} contact={contact} />
+                        
                     })
                 }
             </ul>
         );
         return (
-            <div>
+            <div className={Style.cardformat}>
                 <button type="button" onClick={this.toggleShowHandler}>
                     {this.state.showcontacts ? "Hide" : "show"} Contacts
                 </button>
+                <br /><br />
                 {this.state.showcontacts && contactlist}
             </div >
         );

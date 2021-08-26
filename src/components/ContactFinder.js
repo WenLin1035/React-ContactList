@@ -1,6 +1,7 @@
 import React, { Component, Fragment} from 'react';
 import ContactDetails from './ContactDetails';
 import ContactCardList from './ContactCardList';
+import Style from './ContactDetailsList.module.css';
 
 //useEffect const
 //const LOCAL_STORAGE_KEY = "contactlist";
@@ -42,7 +43,7 @@ class ContactFinder extends Component {
             this.setState({ selectedContact: this.props.contacts})
         }
         //shows contacts user searched for
-        if (prevState.searchtext !== this.state.searchtext || (prevState.searchtext == this.state.searchtext && prevState.contactlist.length !== this.props.contacts.length)) {
+        if (prevState.searchtext !== this.state.searchtext || (prevState.searchtext === this.state.searchtext && prevState.contactlist.length !== this.props.contacts.length)) {
             //console.log("in componentDidUpdate contactfinder 3");
             this.setState({
                 selectedContact: this.props.contacts.filter((prod) => {
@@ -62,10 +63,14 @@ class ContactFinder extends Component {
         return (
             <Fragment>
                 <div>
-                    <input type="search" onChange={this.searchChangeHandler}></input>
+                    <label>Search: </label><input type="search" onChange={this.searchChangeHandler}></input>
                 </div>
-                <ContactDetails clist={this.state.selectedContact} />
-                <div>
+                <br />
+                <div className={Style.cardleft}>
+                    <h2 className={Style.cardformat }>Contact List</h2>
+                    <ContactDetails clist={this.state.selectedContact} />
+                </div>
+                <div className={Style.cardright}>
                     <h2>Contact Cards</h2>
                     <ContactCardList contacts={this.state.selectedContact}/>
                 </div>

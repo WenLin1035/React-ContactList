@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-
+import Style from './ContactDetailsList.module.css';
 
 class Contact extends Component {
     componentDidMount() {
@@ -12,7 +12,16 @@ class Contact extends Component {
 
     render() {
         //console.log("About to make li for: ", this.props.name)
-        return <li>Name: {this.props.contact.name} Email: {this.props.contact.email }</li>
+        return <li className={Style.card}>
+            <table className={Style.tablewidth }>
+                <td className={Style.colwidth }>
+                    Name: {this.props.contact.name}
+                </td>
+                <td className={Style.colwidth}>
+                    Email: {this.props.contact.email}
+                </td>
+            </table>
+            </li>
     }
 }
 export default Contact;
