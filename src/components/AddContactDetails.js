@@ -2,8 +2,51 @@ import React, { Component } from "react";
 import Style from './AddContactDetails.module.css';
 
 class AddContactDetails extends Component{
-    state={
-        id: "", name: "", email: "", phone: "", isValid:true
+    //state={
+    //    id: "", name: "", email: "", phone: "", isValid:true
+    //}
+
+    //first 1
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: "", name: "", email: "", phone: "", isValid: true
+        }
+        console.log("in constructor of AddContact details 1");
+    }
+
+    //Second - gets the current state
+    static getDerivedStateFromProps() {
+        console.log("in getDerivedStateFromProps 2")
+    }
+
+    //Forurth - reads data
+    componentDidMount() {
+        ///api calls
+        //reading data from file or database 
+        console.log("in componentDidMount")
+    }
+
+    //Fifth(after updation)
+    shouldComponentUpdate() {
+        console.log("in shouldComponentUpdate")
+        return true;
+    }
+
+    //seventh(after update)
+    getSnapshotBeforeUpdate() {
+        console.log("in getSnapshotBeforeUpdate")
+        return true;
+    }
+
+    //Eight(after update)
+    componentDidUpdate() {
+        console.log("in componentDidUpdate")
+    }
+
+    //nineth Last
+    componentWillUnmount() {
+        console.log("in componentWillUnmount")
     }
 
     add=(event)=>{
@@ -14,10 +57,15 @@ class AddContactDetails extends Component{
             this.setState({ isValid: false });
             return;
         }
+        this.setState({ isValid: true })
         this.props.addContactHandler(this.state);
         this.setState({ id: "", name: "", email: "", phone: "",isValid:true}); //reset form
 
     }
+    // add value property and onchange event handler for two way binding between 
+    //state property and form elements
+    //Third
+    //sixth
     render(){
         return (
             <div>
