@@ -12,41 +12,41 @@ class AddContactDetails extends Component{
         this.state = {
             id: "", name: "", email: "", phone: "", isValid: true
         }
-        console.log("in constructor of AddContact details 1");
+        //console.log("in constructor of AddContact details 1");
     }
 
     //Second - gets the current state
     static getDerivedStateFromProps() {
-        console.log("in getDerivedStateFromProps 2")
+        //console.log("in getDerivedStateFromProps 2")
     }
 
     //Forurth - reads data
     componentDidMount() {
         ///api calls
         //reading data from file or database 
-        console.log("in componentDidMount")
+        //console.log("in componentDidMount")
     }
 
     //Fifth(after updation)
     shouldComponentUpdate() {
-        console.log("in shouldComponentUpdate")
+        //console.log("in shouldComponentUpdate")
         return true;
     }
 
     //seventh(after update)
     getSnapshotBeforeUpdate() {
-        console.log("in getSnapshotBeforeUpdate")
+        //console.log("in getSnapshotBeforeUpdate")
         return true;
     }
 
     //Eight(after update)
     componentDidUpdate() {
-        console.log("in componentDidUpdate")
+        //console.log("in componentDidUpdate")
     }
 
     //nineth Last
     componentWillUnmount() {
-        console.log("in componentWillUnmount")
+        //console.log("in componentWillUnmount")
     }
 
     add=(event)=>{

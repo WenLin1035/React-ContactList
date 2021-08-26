@@ -1,8 +1,11 @@
 import './App.css';
 import Header from "./components/Header";
 import AddContactDetails from "./components/AddContactDetails";
-import ContactDetails from "./components/ContactDetails";
+//import ContactCardList from "./components/ContactCardList";
+//import ContactDetails from "./components/ContactDetails";
 import { useState, useEffect } from 'react';
+import ContactFinder from './components/ContactFinder';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -18,6 +21,8 @@ function App() {
         if (retrievedData) {
             setContactlist(retrievedData);
         }
+        //shows contact list from local storage
+        console.log("App data: ", contactlist)
     }, []);
 
     //useEffect to update data
@@ -33,13 +38,15 @@ function App() {
         /*contactlist = newcontactlist;
         console.log(contactlist);*/
         setContactlist(newcontactlist);
-        console.log("hi");
+        //prints the new list after a new contact is added
+        console.log("new list after adding: ", contactlist)
     }
-  return (
+    return (
     <div className="App">
           <Header />
           <AddContactDetails addContactHandler={addContactData} />
-          <ContactDetails contacts={contactlist}/>
+          <ContactFinder contacts={contactlist }/>
+          {/*<ContactCardList contacts={contactlist} />*/}
     </div>
    
   );

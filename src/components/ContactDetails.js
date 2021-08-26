@@ -1,32 +1,44 @@
-import React from 'react';
-import Style from './ContactDetails.module.css';
+import React, { Component} from 'react';
+import Contact from './Contact';
 
-const ContactDetails=(props)=>{
-    return (
-        <div>
-            <ul style={{ listStyleType: "none"}}>
-                {props.contacts.map((contact) => {
-                    return (
-                        <li className={Style.card} key={contact.id}>
-                            <table className={Style.cardformat}>
-                                <tbody>
-                                    <tr>
-                                        <td className={Style.cardleft }>Name: {contact.name}</td>
-                                        <td className={Style.cardright}><button>Delete</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td className={Style.cardleft}>Email: {contact.email}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            {/*ID: {contact.id}, Name: {contact.name}, Email: {contact.email},*/}
-                            {/*Phone: {contact.phone}*/}
-                        </li>
-                    );
-                })}
+
+class ContactDetails extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showcontacts: true
+        }
+    }
+    //state = {
+    //    showcontacts: true
+    //}
+    toggleShowHandler = () => {
+        console.log(this.props.clist)
+        this.setState((prevState) => {
+            return {showcontacts:!prevState.showcontacts}
+        })
+    }
+    render() {
+        console.log("in render of ContactDetails");
+        //console.log(this.props.clist);
+        const contactlist = (
+            <ul style={{listStyleType:"none"} }>
+                {
+                    this.props.clist.map((contact) => {
+                        return <Contact key={contact.id} contact={contact} />
+                    })
+                }
             </ul>
-        </div>
-    );
+        );
+        return (
+            <div>
+                <button type="button" onClick={this.toggleShowHandler}>
+                    {this.state.showcontacts ? "Hide" : "show"} Contacts
+                </button>
+                {this.state.showcontacts && contactlist}
+            </div >
+        );
+    }
 }
 
 export default ContactDetails;
