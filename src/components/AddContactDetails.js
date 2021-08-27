@@ -60,7 +60,7 @@ class AddContactDetails extends Component{
         this.setState({ isValid: true })
         this.props.addContactHandler(this.state);
         this.setState({ id: "", name: "", email: "", phone: "",isValid:true}); //reset form
-
+        this.props.history.push("/");
     }
     // add value property and onchange event handler for two way binding between 
     //state property and form elements

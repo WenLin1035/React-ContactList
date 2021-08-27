@@ -13,13 +13,18 @@ class Contact extends Component {
     render() {
         //console.log("About to make li for: ", this.props.name)
         return <li className={Style.card}>
-            <table className={Style.tablewidth }>
-                <td className={Style.colwidth }>
-                    Name: {this.props.contact.name}
-                </td>
-                <td className={Style.colwidth}>
-                    Email: {this.props.contact.email}
-                </td>
+            <table className={Style.tablewidth}>
+                <tbody>
+                    <tr>
+                        <td className={Style.colwidth}>
+                            Name: {this.props.contact.name}
+                        </td>
+                        <td className={Style.colwidth}>
+                            Email: {this.props.contact.email}
+                        </td>
+                    </tr>
+                    
+                </tbody>
             </table>
             </li>
     }

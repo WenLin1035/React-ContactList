@@ -23,6 +23,7 @@ class ContactFinder extends Component {
         this.searchChangeHandler = this.searchChangeHandler.bind(this);
     }
 
+
     componentDidMount() {
         // console.log("in componentDidMount productFinder");
         // send http request
@@ -59,6 +60,11 @@ class ContactFinder extends Component {
         this.setState({ searchtext: event.target.value })
     }
 
+    getContactIdinContactFinder = (id) => {
+        console.log("This is delete contact id2: ", this.props)
+        this.props.getContactId(id);
+    }
+
     render() {
         return (
             <Fragment>
@@ -66,13 +72,13 @@ class ContactFinder extends Component {
                     <label>Search: </label><input type="search" onChange={this.searchChangeHandler}></input>
                 </div>
                 <br />
-                <div className={Style.cardleft}>
+                {/*<div className={Style.cardleft}>
                     <h2 className={Style.cardformat }>Contact List</h2>
                     <ContactDetails clist={this.state.selectedContact} />
-                </div>
-                <div className={Style.cardright}>
+                </div>*/}
+                <div className={Style.tablewidth, Style.cardformat}>
                     <h2>Contact Cards</h2>
-                    <ContactCardList contacts={this.state.selectedContact}/>
+                    <ContactCardList contacts={this.state.selectedContact} deleteHandler={this.getContactIdinContactFinder}/>
                 </div>
             </Fragment>
         )

@@ -31,3 +31,8 @@
 .colwidth{
     width: 50%;
 }
+
+.offrightby10{
+    text-align: right;
+    margin-right: 10px;
+}
